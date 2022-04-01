@@ -1,0 +1,13 @@
+<div *ngIf="loading; else content">
+</div>
+<ng-template #content>
+  <div class="news-sidebar-categories">
+    <h3 class="title">Categories</h3>
+    <div *ngFor="let entry of tf[0]; let categoryIndex = index">
+      <a routerLink="/news/categories/{{ tf[0][categoryIndex] }}" class="item">
+        <span>{{ tf[0][categoryIndex]}}</span>
+        <span class="color">{{ tf[1][categoryIndex]}}</span>
+      </a>
+    </div>
+  </div>
+</ng-template>

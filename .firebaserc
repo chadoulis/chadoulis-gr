@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "chadoulis-gr"
+  },
+  "targets": {
+    "chadoulis-gr": {
+      "hosting": {
+        "chadoulis": [
+          "chadoulis-gr"
+        ]
+      }
+    }
+  }
+}

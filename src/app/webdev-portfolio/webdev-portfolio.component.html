@@ -1,0 +1,81 @@
+
+<div class="container" style="padding-top: 50px">
+    <!-- <h2>Web Development</h2> -->
+    <!-- <h1 style="text-align: center; padding-bottom: 25px;">Software Development Projects</h1> -->
+    <div class="row">
+        <div *ngFor="let p of partners" class="offset-2 offset-sm-0 col-8 col-lg-4 col-xl-3 col-sm-6 offset-md-1 col-md-5 offset-lg-0">
+            <div class="team-section-wrap" >
+                <!-- <p *ngIf="p.acronym=='CERTH'" class="text-center rounded" style="color: white;background-color: rgb(72 163 162)">COORDINATOR</p>
+                <p *ngIf="p.acronym!='CERTH'" class="text-center" style="color: white">Partner</p> -->
+                <!-- <fa-icon *ngIf="p.tech=='angular'" style="color:#de3641" [icon]="faAngular" size="2x"></fa-icon> -->
+                <img *ngIf="p.tech=='node'" style="height: 25px;" src="assets/images/node.png">
+                <img *ngIf="p.tech=='angular'" style="height: 25px;" src="assets/images/angular.png">
+                <img *ngIf="p.tech=='python'" style="height: 25px;" src="assets/images/python.png">
+                <img *ngIf="p.tech=='fortran'" title="fortran" style="height: 25px;" src="assets/images/fortran.png">
+                <img *ngIf="p.tech=='django'" style="height: 25px" src="assets/images/django-logo-positive.png">
+                <img *ngIf="p.tech2=='universal'" style="height: 25px; padding-left: 5px;" src="assets/images/universal.png">
+                <img *ngIf="p.tech3=='firebase'" style="height: 25px; padding-left: 5px;" src="assets/images/firebase.png">
+                <img *ngIf="p.tech=='matlab'" style="height: 25px; padding-left: 5px;" src="assets/images/matlab.png">
+                <img *ngIf="p.tech=='R'" style="height: 25px; padding-left: 5px;" src="assets/images/r.png">
+
+                <div class="img color1">
+
+                    <img src="assets/images/projects/{{ p.img  }}" alt="" class="rounded-circle">
+                </div>
+                <h4 style="text-align: center;">  {{ p.name }}</h4>
+                <p style="font-size: 12px; text-align: justify;" [innerHTML]="p.description"></p>
+                <!-- <h5><img src="assets/images/flags/{{ p.country | lowercase }}.svg" width="25px"> {{ p.country }}</h5> -->
+                <div class="row" style="text-align: center;">
+
+                    <div *ngIf="p.category === 'website'" class="col" style="padding:5px">
+                        <button mat-button>
+                            <fa-icon style=" padding-right: 10px;" [icon]="faGlobe" size="lg"> </fa-icon>
+                            <a href="{{ p.url }}" target="_blank"  style="color: black">Website</a>
+                        </button>
+                    </div>
+
+                    <div *ngIf="p.category === 'script'" class="col" style="padding:5px">
+                        <button mat-button>
+                            <fa-icon style=" padding-right: 10px;" [icon]="faGithub" size="lg"> </fa-icon>
+                            <a href="{{ p.url }}" target="_blank"  style="color: black">Repository</a>
+                        </button>
+                    </div>
+
+                    <div *ngIf="p.category === 'package'" class="col" style="padding:5px">
+                        <button mat-button>
+                            <fa-icon style=" padding-right: 10px;" [icon]="faGithub" size="lg"> </fa-icon>
+                            <a href="{{ p.url }}" target="_blank"  style="color: black">Repository</a>
+                        </button>
+                    </div>
+
+                    <div *ngIf="p.category === 'paper-code'" class="col" style="padding:5px">
+                      <button mat-button>
+                          <fa-icon style=" padding-right: 10px;" [icon]="faGithub" size="lg"> </fa-icon>
+                          <a href="{{ p.url }}" target="_blank"  style="color: black">Repository</a>
+                      </button>
+                      <button mat-button>
+                        <fa-icon style=" padding-right: 10px;" [icon]="faResearchgate" size="lg"> </fa-icon>
+                        <a href="{{ p.url }}" target="_blank"  style="color: black">Publlication</a>
+                    </button>
+                  </div>
+
+                    <div class="col-12" style="padding:5px; text-align: center;">
+                        <!-- <button mat-button [routerLink]="p.id" > -->
+
+                            <!-- <fa-icon style=" padding-right: 10px;" [icon]="faAngular" size="md">
+                            </fa-icon> -->
+                        <!-- </button> -->
+                    </div>
+                </div>
+                <!-- <div class="text-md-right">
+                    <app-modal [content]="p.description"></app-modal>
+                    <button href="javascript:" class="read-more-line" href="{{ p.website }}" target="_blank" aria-label="Visit website"><fa-icon style="color: #7b999e; padding-right: 10px;" [icon]="faGlobe" size="lg"></fa-icon></button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

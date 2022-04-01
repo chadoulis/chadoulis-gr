@@ -1,0 +1,36 @@
+<div class="container" style="padding-top:25px;">
+  <div class="row">
+    <div class="col-12 col-md-8">
+      <div class="container" style="position: relative;">
+        <div class="row">
+          <div class="col-4 col-md-6">
+            <mat-form-field appearance="fill">
+              <mat-label>Sort By</mat-label>
+              <select matNativeControl (change)="selectSortingCriterion($event)">
+                <option *ngFor="let option of sortingCriteria" [value]="option.value"
+                  [selected]="selectedSortingCriterion === option.value">{{ option.viewValue }}</option>
+              </select>
+            </mat-form-field>
+          </div>
+          <div class="col-8 col-md-6 d-none d-md-block">
+            <br>
+            <pagination-controls (pageChange)="pageChange($event)" class="my-pagination"></pagination-controls>
+          </div>
+        </div>
+      </div>
+      <div class="container" *ngFor="let item of news | paginate: config; index as i;">
+        <app-blog-post-preview [post]="item"></app-blog-post-preview>
+      </div>
+      <div class="text-center">
+        <pagination-controls (pageChange)="pageChange($event)" class="my-pagination"></pagination-controls>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="container" style="position: relative;">
+      </div>
+      <div class="container" style="padding-top: 10px;">
+        <app-categories-list></app-categories-list>
+      </div>
+    </div>
+  </div>
+</div>

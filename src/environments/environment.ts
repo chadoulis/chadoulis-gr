@@ -1,10 +1,29 @@
 // This file can be replaced during build by using the `fileReplacements` array.
-// `ng build` replaces `environment.ts` with `environment.prod.ts`.
+// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    projectId: 'chadoulis-gr',
+    appId: '1:171295240976:web:08647b80a7a506b43b6b95',
+    storageBucket: 'chadoulis-gr.appspot.com',
+    locationId: 'europe-west',
+    apiKey: 'AIzaSyARJUzNeNvFfIZMo74GzbumxMC7bn12kXw',
+    authDomain: 'chadoulis-gr.firebaseapp.com',
+    messagingSenderId: '171295240976',
+    measurementId: 'G-CBX9CRV17E',
+  },
+  mapbox: {
+    accessToken: 'pk.eyJ1Ijoid3FlbXMyMDIwIiwiYSI6ImNsMHRsYjM3bjAwbDEzYnFvZnIzaHE1NHIifQ.0QofPCPeqyr8NtDrE2ylIA'
+  },
+  recaptcha: {
+    siteKey: '6Lcky68eAAAAAOkOwz19rOCYs4kqOxDrmAStkea0',
+  },
+  domain: "localhost"
 };
+
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
 /*
  * For easier debugging in development mode, you can import the following file

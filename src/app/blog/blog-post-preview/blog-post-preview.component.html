@@ -1,0 +1,34 @@
+<div class="team-section-wrap row g-0 rounded overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
+  <div class="col-auto d-none d-lg-block">
+      <img  class="bd-placeholder-img rounded" width="300" height="300" src="assets/images/blog/{{ post.img }}" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+  </div>
+  <div class="col p-4 d-flex flex-column position-static">
+      <strong  class="d-inline-block mb-2 text-success">
+
+          <a id="redcolora" href="#">{{ post.category }}</a>
+
+          <!--<div *ngIf="post.category==='WORKSHOPS'">
+              <a style="color: #4f5e61" href="#">{{ post.category }}</a>
+          </div>
+          <div *ngIf="post.category==='MILESTONES'">
+              <a style="color: #4cafae" href="#">{{ post.category }}</a>
+          </div>
+          <div *ngIf="post.category==='FROM THE PARTNERS'">
+              <a style="color: #b0433a" href="#">{{ post.category }}</a>
+          </div>-->
+
+      </strong>
+      <h2 style="color: #3b4243;" class="mb-0">{{ post.title }}</h2>
+      <div style="color:#3b4243;" class="mb-1 text-muted">
+          {{ post.date.toDate() |  date: 'yyyy-MM-dd' }}
+      </div>
+      <br>
+      <p class="mb-auto">{{ post.synopsis }} </p> <br>
+      <a id="bluecolora" [routerLink]="['/blog/'+ post.slug ]" class="stretched-link">
+          <fa-icon style="color: #7b999e; padding-right: 10px;" [icon]="faAngleDoubleRight" size="lg"></fa-icon>
+          Read more...
+      </a>
+  </div>
+
+</div>
+

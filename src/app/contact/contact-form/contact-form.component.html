@@ -1,0 +1,41 @@
+<h1 style="padding: 20px;">Contact Form</h1>
+<div class="md-form" role="form" style="padding: 20px;">
+  <form [formGroup]="contactForm">
+    <div class="md-form">
+      <i class="fa fa-user prefix grey-text"></i>
+      <input type="text" id="contactFormName" formControlName="contactFormName" class="form-control" mdbInputDirective
+        [(ngModel)]="itemName" required placeholder="Your Name*">
+      <label for="contactFormName"></label>
+      <div *ngIf="hasError('contactFormName')">
+        Error!
+      </div>
+    </div>
+    <div class="md-form">
+      <i class="fa fa-envelope prefix grey-text"></i>
+      <input type="email" id="contactFormEmail" formControlName="contactFormEmail" class="form-control"
+        mdbInputDirective [(ngModel)]="itemEmail" required placeholder="Your Email*">
+      <label for="contactFormEmail"></label>
+    </div>
+    <div class="md-form">
+      <i class="fa fa-tag prefix grey-text"></i>
+      <input type="text" id="contactFormSubject" formControlName="contactFormSubject" class="form-control"
+        mdbInputDirective [(ngModel)]="itemSubject" required placeholder="Your Subject*">
+      <label for="contactFormSubject"></label>
+    </div>
+    <div class="md-form">
+      <i class="fa fa-pencil prefix grey-text"></i>
+      <textarea type="text" id="contactFormMessage" formControlName="contactFormMessage" class="md-textarea"
+        style="height: 150px; width: 100%;" mdbInputDirective [(ngModel)]="itemMessage" required
+        placeholder=" Your Message*">
+          </textarea>
+      <label for="contactFormMessage"></label>
+    </div>
+    <div class="text-right" style="padding-top:10px">
+      <button mat-raised-button color="primary" [disabled]="contactForm.invalid" (click)="onSubmit()"
+        (click)="clearForm()" type="submit" class="default-btn border-radius" mdbWavesEffect>Send
+        <i class="fa fa-paper-plane-o ml-1"></i>
+      </button>
+      <br>
+    </div>
+  </form>
+</div>
