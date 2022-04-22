@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ReCaptchaV3Service } from 'ng-recaptcha';
+import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
 import { BlogService } from '../blog.service';
 
@@ -20,7 +21,8 @@ export class SubscribeComponent  {
   constructor(
     private fb: FormBuilder,
     private blogService: BlogService,
-    private recaptchaV3Service: ReCaptchaV3Service
+    private recaptchaV3Service: ReCaptchaV3Service,
+    private toastr: ToastrService
   ) {
     this.subscribeForm = this.fb.group({
       contactFormEmail: [''],
@@ -38,7 +40,7 @@ export class SubscribeComponent  {
       .subscribe((token: string) => {
         console.debug(`Token [${token}] generated`);
       });
-    alert('Thank you for contacting us, your message has gone through!');
+      this.toastr.success('You have subscribed to my newsletter...', 'Thank you!');
   }
 
   /**

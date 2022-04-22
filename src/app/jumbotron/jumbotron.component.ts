@@ -64,10 +64,10 @@ export class JumbotronComponent implements OnInit {
           this.height = '200'
           this.position = 'center'
         }
-        if (this.section === '/podcasts') {
+        if (this.section === '/media') {
           this.imgURL =  '/assets/images/covers/66.jpeg'
           this.cover='cover'
-          this.height = '400'
+          this.height = '200'
           this.position = 'center'
         }
       }

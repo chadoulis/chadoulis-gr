@@ -3,22 +3,22 @@
 <ng-template #content>
   <div class="container" style="padding-top: 25px;">
     <div class="row justify-content-center">
-      <div class="col-lg-8">
+      <div class="col-12">
         <div class="row justify-content-center">
           <div class="col-lg-12 col-md-12">
             <div class="news-item full-item mt-50 blog-details-news">
-               <div class="news-item-thumb">
+               <!-- <div class="news-item-thumb">
                 <img style="height: 500px !important; object-fit: cover;" src="assets/images/blog/{{ new.img }}"
                   alt="news">
                 <i class="fal fa-smile"></i>
-              </div>
+              </div> -->
               <div class="news-item-content">
-                <span>{{ new.date.toDate() | date: 'yyyy-MM-dd' }}</span><br>
-                <h3 class="title">{{ new.title }}</h3>
-                <div style="padding-bottom: 20px;">
-                </div>
+                <p style="display: inline;">{{ new.date.toDate() | date: 'yyyy-MM-dd' }}</p>
+                <h3 class="title" style="padding-left: 20px; ">{{ new.title }}</h3>
+
                 <p *ngIf="new.link">Source: <a href="{{ new.link }}" target="_blank">{{ new.link }}</a> </p>
-                <p>Originally published</p>
+                <p *ngIf="new.originally">Originally published: {{ new.originally }} </p>
+                <br>
 
 
                 <div *ngFor="let element of new.body" class="row mb-2">
@@ -26,19 +26,13 @@
                   <iframe *ngIf="element.type==='code'" class="e2e-trusted-url" [src]="r(element.content) | safe"
                   style="width: 100%; height: 242px;" frameborder="0"></iframe>
 
-                  <div *ngIf="element.type==='paragraph'" class="col">
+                  <div *ngIf="element.type==='paragraph'" class="col" style="text-align:center">
                     <p [innerHTML]="element.content"></p>
                   </div>
 
 
                 </div>
-                <div *ngIf="new.imgInside">
-                  <figure>
-                    <img style="width:100%" src="assets/images/news/{{ new.imgInside }}">
-                    <figcaption> Our Covid19 free presence in the world :-) Always with a smile and
-                      a vision!</figcaption>
-                  </figure>
-                </div>
+
               </div>
               <div style="padding-bottom: 25px;">
               </div>
@@ -46,13 +40,13 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-7 col-sm-10">
-        <div class="news-sidebar mt-20">
+      <!-- <div class="col-lg-4 col-md-7 col-sm-10"> -->
+        <!-- <div class="news-sidebar mt-20">
           <div class="container" style="padding-bottom: 25px;">
             <app-categories-list></app-categories-list>
           </div>
-        </div>
-      </div>
+        </div> -->
+      <!-- </div> -->
     </div>
   </div>
 

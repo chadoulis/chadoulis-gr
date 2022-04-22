@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ReCaptchaV3Service } from 'ng-recaptcha';
 import { Observable } from 'rxjs';
 import { ContactService } from '../contact.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-contact-form',
@@ -26,7 +27,8 @@ export class ContactFormComponent {
   constructor(
     private fb: FormBuilder,
     private contactService: ContactService,
-    private recaptchaV3Service: ReCaptchaV3Service
+    private recaptchaV3Service: ReCaptchaV3Service,
+    private toastr: ToastrService
   ) {
     this.contactForm = this.fb.group({
       contactFormName: ['', Validators.required],
@@ -46,7 +48,7 @@ export class ContactFormComponent {
       .subscribe((token: string) => {
         console.debug(`Token [${token}] generated`);
       });
-    alert('Thank you for contacting us, your message has gone through!');
+      this.toastr.success('for reaching up! I will contact you as soon as possible...', 'Thank you');
   }
 
   /**

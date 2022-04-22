@@ -24,9 +24,9 @@ import { ContactModule } from './contact/contact.module';
 import { AngularFireModule } from '@angular/fire/compat';
 import { RecaptchaV3Module, RECAPTCHA_V3_SITE_KEY } from 'ng-recaptcha';
 import {MatIconModule} from '@angular/material/icon'
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { CvModule } from './cv/cv.module';
 import { NewsModule } from './news/news.module';
+import { ToastrModule } from 'ngx-toastr';
 // import { CitationsGaugeComponent } from './citations-gauge/citations-gauge.component';
 // import { CitationsListComponent } from './citations-list/citations-list.component';
 // import { CitationsMetricsComponent } from './citations-metrics/citations-metrics.component';
@@ -59,7 +59,8 @@ import { NewsModule } from './news/news.module';
     FontAwesomeModule,
     MatIconModule,
     CvModule,
-    NewsModule
+    NewsModule,
+    ToastrModule.forRoot()
     //provideFirebaseApp(() => initializeApp(environment.firebase)),
     //provideFirestore(() => getFirestore()),
   ],

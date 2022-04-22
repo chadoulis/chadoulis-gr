@@ -26,6 +26,7 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./cv/cv.module').then(m => m.CvModule)
   },
+
 ];
 
 @NgModule({

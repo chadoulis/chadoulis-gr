@@ -10,6 +10,7 @@ import { ContactMapComponent } from './contact-map/contact-map.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 
+
 @NgModule({
   declarations: [
     ContactFormComponent,
@@ -23,7 +24,7 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
     MatInputModule,
     ContactRoutingModule,
     MatButtonModule,
-    LeafletModule
+    LeafletModule,
   ],
   exports: [
     ContactPageComponent
