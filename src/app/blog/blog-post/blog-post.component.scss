@@ -12,6 +12,7 @@
 
   .news-item .news-item-thumb img {
   width: 100%;
+  height: 200px;
   -webkit-transition: all .3s ease-out 0s;
   transition: all .3s ease-out 0s;
   }
@@ -119,7 +120,7 @@
   .news-item .news-item-content .title {
   font-size: 30px;
   color: #333;
-  line-height: 32px;
+  line-height: 46px;
   font-weight: 600;
   padding-right: 25px;
   padding-top: 5px;
@@ -188,9 +189,9 @@
   text-align: justify;
   }
 
-  .news-sidebar {
-  border: 3px solid #f6f6f6;
-  }
+  // .news-sidebar {
+  // border: 3px solid #f6f6f6;
+  // }
 
   .news-sidebar .news-update-btn ul {
   display: -moz-flex;
@@ -265,6 +266,7 @@
   letter-spacing: 1px;
   position: relative;
   margin-bottom: 5px;
+
   }
 
   .news-sidebar-categories .title::before {

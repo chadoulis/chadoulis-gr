@@ -1,0 +1,34 @@
+<ul>
+  <li *ngFor="let bib_element of acsBib; let i = index;" (click)="onSelect(bib_element)">
+
+
+
+      <div *ngIf="isConference(bib_element)">
+          <div class="container">
+              <div class="row">
+                  <div class="col-2">
+                      <p>{{ bib_element.year }}</p>
+                  </div>
+                  <div class="col-10">
+                      <p style="font-size: 20px; line-height: 28px;"> {{ bib_element.getAuthors() }}. {{ bib_element.title}}. {{ bib_element.proceedingsName }}. {{ bib_element.doi }}.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div *ngIf="isPresentation(bib_element)">
+          <div class="container">
+              <div class="row">
+                  <div class="col-2">
+                      <p>{{ bib_element.year }}</p>
+                  </div>
+                  <div class="col-10">
+                      <p style="font-size: 20px; line-height: 28px;"> {{ bib_element.getAuthors() }}. {{ bib_element.title}}. {{ bib_element.proceedingsName }}. {{ bib_element.doi }}.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <hr>
+  </li>
+</ul>
+

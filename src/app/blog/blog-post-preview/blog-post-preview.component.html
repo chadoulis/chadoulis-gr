@@ -22,11 +22,11 @@
       <div style="color:#3b4243;" class="mb-1 text-muted">
           {{ post.date.toDate() |  date: 'yyyy-MM-dd' }}
       </div>
-      <br>
-      <p class="mb-auto">{{ post.synopsis }} </p> <br>
+
+      <p style="text-align: justify;">{{ post.synopsis }} </p> <br>
       <a id="bluecolora" [routerLink]="['/blog/'+ post.slug ]" class="stretched-link">
           <fa-icon style="color: #7b999e; padding-right: 10px;" [icon]="faAngleDoubleRight" size="lg"></fa-icon>
-          Read more...
+          Διάβασε περισσότερα
       </a>
   </div>
 

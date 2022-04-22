@@ -1,19 +1,11 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { faTags } from '@fortawesome/free-solid-svg-icons';
-import {map} from 'rxjs/operators'
-import { Firestore, collectionData, collection } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
+import { BlogService } from '../blog.service';
 
-
-interface BlogPost {
-  title: string,
-  synopsis: string,
-  slug: string,
-  body: [],
-  date: any
-};
-
+/**
+ * A blog post.
+ */
 @Component({
   selector: 'app-blog-post',
   templateUrl: './blog-post.component.html',
@@ -21,14 +13,14 @@ interface BlogPost {
 })
 export class BlogPostComponent {
 
-
+  tf: any;
   faTags = faTags;
   new: any;
-  news: any;
+  news: any[];
   router: any;
   value = 0;
   loading = true;
-  item$: Observable<BlogPost[]>;
+
   /**
    *
    * @param {ActivatedRoute} route
@@ -36,37 +28,28 @@ export class BlogPostComponent {
    */
   constructor(
     private route: ActivatedRoute,
-    private firestore: Firestore
+    private blogService: BlogService
     ) {
     const slug = this.route.snapshot.paramMap.get('slug');
-    const c: any = collection(firestore, 'blog');
-    this.item$ = collectionData(c)
-
-    this.item$.subscribe((d)=>{
-      d.forEach((dd)=>{
-        if (dd.slug === slug) {
-          this.new = dd
-        }
-      })
-    })
-    this.loading = false;
+    this.loadContent(slug);
   }
 
   /**
    * Given the slug, returns the corresponding article
-   * @param {string | null} slug
+   * @param {string} slug
    */
   loadContent(slug: string | null) {
     this.loading = true;
-    this.new = this.item$.subscribe((d)=>{
-      d.forEach((dd)=>{
-        if (dd.slug === slug) {
-          debugger
-          return dd
-        }
+    this.blogService.getBlogPostBySlug(slug).subscribe(res => {
+      this.news = res.map( e => {
+        return e.payload.doc.data()
       })
-    })
+      this.new = this.news[0]
+      this.loading = false;
+    });
+  }
+
+  r(code: string){
+    return `https://www.thiscodeworks.com/embed/${code}`
   }
 }
-
-

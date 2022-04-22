@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faFacebook, faLinkedin, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -9,6 +10,7 @@ import { faFacebook, faLinkedin, faTwitter, faYoutube } from '@fortawesome/free-
 })
 export class HomeComponent implements OnInit {
 
+  faAngleDown = faAngleDoubleDown;
   faFacebook = faFacebook;
   faYoutube = faYoutube;
   faTwitter = faTwitter;

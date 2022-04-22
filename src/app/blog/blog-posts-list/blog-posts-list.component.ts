@@ -1,25 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
-import {map} from 'rxjs/operators'
-import { Firestore, collectionData, collection } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
+import { BlogService } from '../blog.service';
+import { map } from 'rxjs/operators';
+import { MatRadioChange } from '@angular/material/radio';
 
 
 interface SortingCriterion {
   value: string;
   viewValue: string;
 }
-
-interface BlogPost {
-  title: string,
-  synopsis: string,
-  slug: string,
-  body: [],
-  date: Date,
-  category: string
-};
-
 @Component({
   selector: 'app-blog-posts-list',
   templateUrl: './blog-posts-list.component.html',
@@ -27,31 +17,36 @@ interface BlogPost {
 })
 export class BlogPostsListComponent implements OnInit {
 
+  filter: any;
     faAngleDoubleRight = faAngleDoubleRight; // Icon
     config: any; // Pagination configuration
-    news: BlogPost[]; // The Array of news that is going to be populated by firebase
+    news: any[]; // The Array of news that is going to be populated by firebase
     sortingCriteria: SortingCriterion[] = [
       {value: 'Date', viewValue: 'Date'},
       {value: 'Title', viewValue: 'Title'},
     ];
     selectedSortingCriterion = this.sortingCriteria[0].value;
-    item$: Observable<BlogPost[]>;
+
+    /**
+     *
+     * @param {ActivatedRoute} route
+     * @param {Router} router
+     * @param {BlogService} blogService
+     */
     constructor(
       private route: ActivatedRoute,
       private router: Router,
-      firestore: Firestore
+      public blogService: BlogService
       ) {
-    const c: any = collection(firestore, 'blog');
-     this.item$ = collectionData(c);
-
       this.config = {
         currentPage: 1,
         itemsPerPage: 3
       };
 
-      this.route.queryParamMap.pipe(
-        map(params => params.get('page')))
-        .subscribe(page => this.config.currentPage = page);
+      this.route.queryParamMap.pipe(map(params => params.get('page')))
+      .subscribe((page) => {
+        this.config.currentPage = page;
+      })
     }
 
     /**
@@ -61,9 +56,9 @@ export class BlogPostsListComponent implements OnInit {
     selectSortingCriterion(event: Event) {
       this.selectedSortingCriterion = (event.target as HTMLSelectElement).value;
       if ((event.target as HTMLSelectElement).value === 'Date'){
-        this.news = this.news.slice().sort((a:any, b:any) => b.date - a.date)
+        this.news = this.news.slice().sort((a: any, b: any) => b.date - a.date)
       } else if ((event.target as HTMLSelectElement).value === 'Title'){
-        this.news = this.news.slice().sort((a:any, b:any) => a.title.localeCompare(b.title))
+        this.news = this.news.slice().sort((a: any, b: any) => a.title.localeCompare(b.title))
       }
     }
 
@@ -72,22 +67,29 @@ export class BlogPostsListComponent implements OnInit {
      * @param {number} newPage
      */
     pageChange(newPage: number) {
-      this.router.navigate(['news'], { queryParams: { page: newPage } });
+      this.router.navigate(['blog'], { queryParams: { page: newPage } });
     }
 
-    ngOnInit(): void {
-      this.item$.subscribe((d)=>{
-        this.news = d
-      })
-
-
-    }
+    radioChange(event: MatRadioChange) {
+      this.blogService.getBlogPostsByLanguage(event.value).subscribe(res => {
+        this.news = res.map( e => {
+          return e.payload.doc.data()
+        })
+        this.news = this.news.slice().sort((a, b) => b.date - a.date)
+      });
   }
 
 
 
-
-
-
-
-
+    /**
+     *
+     */
+    ngOnInit(): void {
+      this.blogService.getBlogPostsByLanguage('english').subscribe(res => {
+        this.news = res.map( e => {
+          return e.payload.doc.data()
+        })
+        this.news = this.news.slice().sort((a, b) => b.date - a.date)
+      });
+    }
+  }

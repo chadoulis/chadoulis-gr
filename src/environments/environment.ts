@@ -15,10 +15,10 @@ export const environment = {
     measurementId: 'G-CBX9CRV17E',
   },
   mapbox: {
-    accessToken: 'pk.eyJ1Ijoid3FlbXMyMDIwIiwiYSI6ImNsMHRsYjM3bjAwbDEzYnFvZnIzaHE1NHIifQ.0QofPCPeqyr8NtDrE2ylIA'
+    accessToken: 'pk.eyJ1IjoiY2hhZG91bGlzIiwiYSI6ImNsMjAxaHhtNjByd2kzbXFvenlmMnZiMjkifQ.pK79AtLOogpXmVuONhwD9Q'
   },
   recaptcha: {
-    siteKey: '6Lcky68eAAAAAOkOwz19rOCYs4kqOxDrmAStkea0',
+    siteKey: '6LcckHMfAAAAABYQPkwqy2NK7HF2T9Lr35oyP5Zr',
   },
   domain: "localhost"
 };

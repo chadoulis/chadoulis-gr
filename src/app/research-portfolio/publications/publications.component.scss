@@ -1,0 +1,31 @@
+h1 {
+  color: #27304b;
+  font-weight: bold;
+}
+
+h1 {
+	font: 700 48px/1.2 "Poppins", sans-serif;
+	margin-bottom: 10px;
+}
+
+.text-center{
+  text-align: center;
+  font-size: 18px;
+}
+
+.text-center h2{
+  font-weight: 500;
+  font-size: 1.6em;
+}
+
+.text-center h2 span{
+  font-weight: 800;
+}
+
+.text-center p{
+  max-width: 500px;
+  margin: 0 auto;
+  color: #6c757d;
+  line-height: 1.5;
+  font-size: 1em;
+}

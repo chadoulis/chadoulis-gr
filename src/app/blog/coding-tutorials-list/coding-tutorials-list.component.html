@@ -1,0 +1,77 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <section class="our-blog" style="padding-top: 50px">
+        <div class="container">
+            <!-- <div class="text-center">
+                <h2><span>Coding</span> Tutorials</h2>
+                <p>A series of tutorials in front-end development with Angular and handling geospatial data with Python and R.</p>
+            </div> -->
+            <div class="row mt-5">
+                    <div *ngFor="let item of news | paginate: config; index as i;" class="col-12 col-2m-6 col-md-4" style="padding-bottom: 25px">
+                        <div class="card">
+                            <img src="assets/images/blog/{{ item.img }}" alt="">
+
+                            <div class="card-body">
+                                <h5 class="card-title" style="padding-top: 10px; line-height: 30px; font-size: 1rem;">
+                                    <a href="#">{{ item.title }}</a>
+                                </h5>
+                                <p class="date-author">
+                                  {{ item.date.toDate() |  date: 'yyyy-MM-dd' }} | {{ item.originally}}<br>
+
+                                </p>
+                                <!-- <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam vero eaque animi pariatur fugit excepturi, fuga delectus facere provident beatae.
+                                </p> -->
+                                <img src="assets/images/flags/{{ item.language | lowercase }}.svg" style="width: 30px; position: absolute; left: 20; bottom: 20;">
+
+                                <div style = "display: flex; justify-content:flex-end; vertical-align: bottom;">
+                                  <button mat-stroked-button routerLink="{{ item.slug }}">Read more</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="col-12 col-2m-6 col-md-4"  style="padding-bottom: 25px">
+                        <div class="card">
+                            <img src="https://images.unsplash.com/photo-1601971935068-fb9281b6deec?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title" style="padding-top: 10px">
+                                    <a href="#">Card Title</a>
+                                </h5>
+                                <p class="date-author">
+                                    11 March 2020 <span class="author">By Abbos</span>
+                                </p>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam vero eaque animi pariatur fugit excepturi, fuga delectus facere provident beatae.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-2m-6 col-md-4"  style="padding-bottom: 25px">
+                        <div class="card">
+                            <img src="https://images.unsplash.com/photo-1601971935068-fb9281b6deec?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title" style="padding-top: 10px">
+                                    <a href="#">Card Title</a>
+                                </h5>
+                                <p class="date-author">
+                                    11 March 2020 <span class="author">By Abbos</span>
+                                </p>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam vero eaque animi pariatur fugit excepturi, fuga delectus facere provident beatae.
+                                </p>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="text-center">
+                  <pagination-controls (pageChange)="pageChange($event)" class="my-pagination"></pagination-controls>
+                </div>
+            </div>
+      </section>
+</div>
+</div>
+</div>

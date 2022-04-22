@@ -6,13 +6,15 @@ import { ContactPageComponent } from './contact-page/contact-page.component';
 import { MatInputModule } from '@angular/material/input';
 import { ContactRoutingModule } from './contact-routing.module';
 import { MatButtonModule } from '@angular/material/button';
-
+import { ContactMapComponent } from './contact-map/contact-map.component';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 
 @NgModule({
   declarations: [
     ContactFormComponent,
-    ContactPageComponent
+    ContactPageComponent,
+    ContactMapComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,11 @@ import { MatButtonModule } from '@angular/material/button';
     ReactiveFormsModule,
     MatInputModule,
     ContactRoutingModule,
-    MatButtonModule
+    MatButtonModule,
+    LeafletModule
+  ],
+  exports: [
+    ContactPageComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ],
 })

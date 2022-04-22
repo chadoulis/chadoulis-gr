@@ -523,7 +523,7 @@
 
     .header-links {
       display: none;
-    }   
+    }
   }
 
   /* mobile styles */
@@ -558,7 +558,7 @@
     height: 100%;
     width: 6px;
     display: inline-block;
-    
+
     -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
     animation: sk-stretchdelay 1.2s infinite ease-in-out;
   }
@@ -584,15 +584,15 @@
   }
 
   @-webkit-keyframes sk-stretchdelay {
-    0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+    0%, 40%, 100% { -webkit-transform: scaleY(0.4) }
     20% { -webkit-transform: scaleY(1.0) }
   }
 
   @keyframes sk-stretchdelay {
-    0%, 40%, 100% { 
+    0%, 40%, 100% {
       transform: scaleY(0.4);
       -webkit-transform: scaleY(0.4);
-    }  20% { 
+    }  20% {
       transform: scaleY(1.0);
       -webkit-transform: scaleY(1.0);
     }
@@ -611,50 +611,7 @@
     animation: 1s blink step-end infinite;
   }
 
-@keyframes "blink" {
-  from, to {
-    color: transparent;
-  }
-  50% {
-    color: white;
-  }
-}
 
-@-moz-keyframes blink {
-  from, to {
-    color: transparent;
-  }
-  50% {
-    color: white;
-  }
-}
-
-@-webkit-keyframes "blink" {
-  from, to {
-    color: transparent;
-  }
-  50% {
-    color: white;
-  }
-}
-
-@-ms-keyframes "blink" {
-  from, to {
-    color: transparent;
-  }
-  50% {
-    color: white;
-  }
-}
-
-@-o-keyframes "blink" {
-  from, to {
-    color: transparent;
-  }
-  50% {
-    color: white;
-  }
-}
 
 .success {
   padding: 1em;
@@ -679,10 +636,6 @@
      -moz-border-radius: 4px;
           border-radius: 4px;
 }
-
-
-
-
 
 
 
@@ -1540,7 +1493,7 @@ footer {
 	.profile__stats {
 		display: none;
 	}
-	.profile__cta { 
+	.profile__cta {
 		padding: 20px 20px 20px 0;
 		align-self: center;
 	}
@@ -1591,7 +1544,7 @@ section {
 	&:nth-child(7) {
 		grid-column: 1 / 7;
 	}
-	
+
 }
 
 #dark,
@@ -1625,7 +1578,7 @@ ul {
     color: #484848;
     line-height: normal;
   }
-  
+
   ul li::before {
     content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
     color: red; /* Change the color */
@@ -2489,7 +2442,7 @@ footer {
 	.profile__stats {
 		display: none;
 	}
-	.profile__cta { 
+	.profile__cta {
 		padding: 20px 20px 20px 0;
 		align-self: center;
 	}
@@ -2540,7 +2493,7 @@ section {
 	&:nth-child(7) {
 		grid-column: 1 / 7;
 	}
-	
+
 }
 
 #dark,

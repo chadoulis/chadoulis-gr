@@ -34,7 +34,13 @@ export class JumbotronComponent implements OnInit {
           this.height = '200'
           this.position = 'right'
         }
-        if (this.section === '/blog') {
+        if (this.section === '/cv') {
+          this.imgURL =  '/assets/images/covers/0000.png'
+          this.cover='cover'
+          this.height = '200'
+          this.position = 'right'
+        }
+        if (this.section.startsWith('/blog')) {
           this.imgURL =  '/assets/images/covers/55.jpeg'
           this.cover='cover'
           this.height = '200'

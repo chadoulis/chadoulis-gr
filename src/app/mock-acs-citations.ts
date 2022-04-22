@@ -46,7 +46,29 @@ const conf_3 = new ACSConference(
     [120018,120018]
 )
 
+const conf_4 = new ACSConference(
+  ['V. Liakos', 'RT, Chadoulis',],
+  "A study of Halyomorpha halys populations in kiwi orchards using remote sensing and geostatistics",
+  "10.1063/1.5091276",
+  "International Congress of Entomology 2022",
+  2022,
+  2075,
+  [120018,120018]
+)
+
+const conf_5 = new ACSConference(
+  ['RT, Chadoulis', 'C. Kalogeropoulos', 'I. Manakos'],
+  "Tobacco disease detection using 3D-CNNs",
+  "10.1063/1.5091276",
+  "International Congress of Entomology 2022",
+  2022,
+  2075,
+  [120018,120018]
+)
+
 ACS_REFERENCE_LIST.push(conf_1);
 ACS_REFERENCE_LIST.push(pres_1);
 ACS_REFERENCE_LIST.push(conf_2);
 ACS_REFERENCE_LIST.push(conf_3);
+ACS_REFERENCE_LIST.push(conf_4);
+ACS_REFERENCE_LIST.push(conf_5);

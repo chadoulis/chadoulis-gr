@@ -16,6 +16,21 @@ export class WebdevPortfolioComponent implements OnInit {
   faGlobe: any = faGlobe;
   fa500px = fa500px
   partners=PROJECTS
+
+
+  communities = [
+    {
+      name: 'Tex Exchange',
+      img: 'tex.png',
+      description: ''
+    },
+    {
+      name: 'NgThess',
+      img: 'angular.png',
+      description: 'A community of Angular developers'
+    }
+  ]
+
   constructor() { }
 
   ngOnInit(): void {

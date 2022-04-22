@@ -1,9 +1,111 @@
-<div class="container" style="padding-top:25px;">
+<app-coding-tutorials-list></app-coding-tutorials-list>
+
+<!-- <div class="container"  style="padding-bottom: 50px">
   <div class="row">
-    <div class="col-12 col-md-8">
-      <div class="container" style="position: relative;">
-        <div class="row">
-          <div class="col-4 col-md-6">
+    <div class="col">
+      <section class="our-blog" style="padding-top: 50px">
+        <div class="container">
+      <app-blog-jumbotron></app-blog-jumbotron>
+        </div>
+      </section>
+    </div>
+  </div>
+</div> -->
+
+<div class="container"  style="padding-bottom: 50px; padding-top: 50px">
+  <div class="row">
+    <div class="col-md-8">
+<app-other-blogging-platforms></app-other-blogging-platforms>
+    </div>
+    <div class="col-md-4">
+<app-subscribe></app-subscribe>
+</div>
+</div>
+</div>
+<!-- <div class="container">
+  <div class="row">
+    <div class="col">
+      <section class="our-blog">
+        <div class="container">
+            <div class="text-center">
+                <h2>Greek <span>Essays & Articles</span></h2>
+                <p>A collection of Articles and Essays written in Greek.</p>
+            </div>
+            <div class="row mt-5">
+                    <div class="col-12 col-2m-6 col-md-4" style="padding-bottom: 25px">
+                        <div class="card">
+                            <img src="https://images.unsplash.com/photo-1601971935068-fb9281b6deec?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title" style="padding-top: 10px">
+                                    <a href="#">Card Title</a>
+                                </h5>
+                                <p class="date-author">
+                                    11 March 2020 <span class="author">By Abbos</span>
+                                </p>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam vero eaque animi pariatur fugit excepturi, fuga delectus facere provident beatae.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-2m-6 col-md-4"  style="padding-bottom: 25px">
+                        <div class="card">
+                            <img src="https://images.unsplash.com/photo-1601971935068-fb9281b6deec?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title" style="padding-top: 10px">
+                                    <a href="#">Card Title</a>
+                                </h5>
+                                <p class="date-author">
+                                    11 March 2020 <span class="author">By Abbos</span>
+                                </p>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam vero eaque animi pariatur fugit excepturi, fuga delectus facere provident beatae.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-2m-6 col-md-4"  style="padding-bottom: 25px">
+                        <div class="card">
+                            <img src="https://images.unsplash.com/photo-1601971935068-fb9281b6deec?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title" style="padding-top: 10px">
+                                    <a href="#">Card Title</a>
+                                </h5>
+                                <p class="date-author">
+                                    11 March 2020 <span class="author">By Abbos</span>
+                                </p>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam vero eaque animi pariatur fugit excepturi, fuga delectus facere provident beatae.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      </section>
+</div>
+</div>
+</div> -->
+
+<!-- <div class="container" style="padding-top:25px;">
+  <div class="row">
+    <div class="col-12">
+      <div class="container" style="position: relative;"> -->
+        <!-- <div class="row">
+          <div class="col">
+            <h1 style="text-align: center;">Chose language:</h1>
+          </div>
+        </div> -->
+        <!-- <div class="row">
+          <div class="col" style="text-align: center;">
+          <hr>
+          </div>
+        </div> -->
+        <!-- <div class="row"> -->
+
+          <!-- <div class="col-3 col-md-4 col-lg-5 col-xl-6">
             <mat-form-field appearance="fill">
               <mat-label>Sort By</mat-label>
               <select matNativeControl (change)="selectSortingCriterion($event)">
@@ -11,26 +113,39 @@
                   [selected]="selectedSortingCriterion === option.value">{{ option.viewValue }}</option>
               </select>
             </mat-form-field>
+          </div> -->
+          <!-- <div class="col" style="text-align: center;">
+
+            <mat-radio-group aria-label="Select an option" style="text-align: center;">
+              <mat-radio-button [value]="'english'" checked="checked" (change)="radioChange($event)"><img style="height: 50px;" src="assets/images/en.svg"></mat-radio-button>
+              <mat-radio-button [value]="'greek'" (change)="radioChange($event)"><img style="height: 50px;" src="assets/images/el.svg"></mat-radio-button>
+            </mat-radio-group>
           </div>
-          <div class="col-8 col-md-6 d-none d-md-block">
-            <br>
-            <pagination-controls (pageChange)="pageChange($event)" class="my-pagination"></pagination-controls>
+        </div> -->
+        <!-- <div class="row">
+          <div class="col"  style="text-align: center;">
+            <mat-form-field appearance="fill" style="padding-left: 25px;">
+              <mat-label>Sort By</mat-label>
+              <select matNativeControl (change)="selectSortingCriterion($event)">
+                <option *ngFor="let option of sortingCriteria" [value]="option.value"
+                  [selected]="selectedSortingCriterion === option.value">{{ option.viewValue }}</option>
+              </select>
+            </mat-form-field>
           </div>
-        </div>
+        </div> -->
+        <!-- <br>
+        <br>
       </div>
+
       <div class="container" *ngFor="let item of news | paginate: config; index as i;">
         <app-blog-post-preview [post]="item"></app-blog-post-preview>
+        <hr>
       </div>
       <div class="text-center">
         <pagination-controls (pageChange)="pageChange($event)" class="my-pagination"></pagination-controls>
       </div>
     </div>
-    <div class="col-12 col-md-4">
-      <div class="container" style="position: relative;">
-      </div>
-      <div class="container" style="padding-top: 10px;">
-        <app-categories-list></app-categories-list>
-      </div>
-    </div>
   </div>
-</div>
+</div> -->
+
+

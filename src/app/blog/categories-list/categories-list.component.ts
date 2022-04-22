@@ -1,16 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {map} from 'rxjs/operators'
-import { Firestore, collectionData, collection } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
+import { BlogService } from '../blog.service';
 
-interface BlogPost {
-  title: string,
-  synopsis: string,
-  slug: string,
-  body: [],
-  date: Date,
-  category: string
-};
 @Component({
   selector: 'app-categories-list',
   templateUrl: './categories-list.component.html',
@@ -19,24 +9,25 @@ interface BlogPost {
 export class CategoriesListComponent implements OnInit {
   tf: any;
   new: any;
-  news: any;
-  loading:boolean;
-  value: any;
-  item$: Observable<BlogPost[]>;
+  news: any[];
+  loading: boolean;
+  value: number;
 
   /**
    *
    * @param {BlogService} blogService
    */
   constructor(
-    private firestore: Firestore
+    private blogService: BlogService
     ) {
-      const c: any = collection(firestore, 'blog');
-      this.item$ = collectionData(c);
-      this.loadContent();
+    this.loadContent();
   }
 
-
+  /**
+   * A function that given an array, returns the absolute frequencies of its members
+   * @param arr
+   * @returns
+   */
   countFrequenciesFromArray(arr: any[]) {
     var a = [],
       b = [],
@@ -54,26 +45,36 @@ export class CategoriesListComponent implements OnInit {
     return [a, b];
   }
 
-  getCategoriesAndFrequencies(nnn: BlogPost[]) {
+  /**
+   *
+   * @param blogposts
+   * @returns
+   */
+  getCategoriesAndFrequencies(blogposts: any[]) {
     const tagsArray = [];
-    for (let entry of nnn) {
+    for (let entry of blogposts) {
       tagsArray.push(entry.category);
     }
     return this.countFrequenciesFromArray(tagsArray);
   }
 
+  /**
+   *
+   */
   loadContent() {
     this.loading = true;
-    this.item$.subscribe((d)=>{
-      this.news = d
+    this.news = [];
+    this.blogService.getBlogPosts().subscribe((res) => {
+      this.news = res.map((e) => {
+        return e.payload.doc.data();
+      });
       this.tf = this.getCategoriesAndFrequencies(this.news);
       this.loading = false;
       this.value = 0;
-      console.log(this.tf)
-    })
+    });
   }
 
   ngOnInit(): void {
-
+    this.news = [];
   }
 }

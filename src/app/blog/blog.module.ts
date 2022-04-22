@@ -12,8 +12,15 @@ import { MatSelectModule } from '@angular/material/select';
 import { BlogRoutingModule } from './blog-routing.module';
 import { BlogPostsOfCategoryComponent } from './blog-posts-of-category/blog-posts-of-category.component';
 import { MatInputModule } from '@angular/material/input';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore/';
-
+import { MatButtonModule } from '@angular/material/button';
+import { SafePipe } from './safe.pipe';
+import{MatRadioModule} from '@angular/material/radio';
+import { BlogJumbotronComponent } from './blog-jumbotron/blog-jumbotron.component';
+import { CodingTutorialsListComponent } from './coding-tutorials-list/coding-tutorials-list.component';
+import { SubscribeComponent } from './subscribe/subscribe.component';
+import { OtherBloggingPlatformsComponent } from './other-blogging-platforms/other-blogging-platforms.component';
+import { BlogOpinionComponent } from './blog-opinion/blog-opinion.component'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,7 +29,13 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore/';
     BlogPostComponent,
     BlogPostsListComponent,
     BlogPostPreviewComponent,
-    BlogPostsOfCategoryComponent
+    BlogPostsOfCategoryComponent,
+    SafePipe,
+    BlogJumbotronComponent,
+    CodingTutorialsListComponent,
+    SubscribeComponent,
+    OtherBloggingPlatformsComponent,
+    BlogOpinionComponent
   ],
   imports: [
     CommonModule,
@@ -35,7 +48,10 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore/';
     MatSelectModule,
     MatFormFieldModule,
     MatInputModule,
-    AngularFirestoreModule,
+    MatButtonModule,
+    MatRadioModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     BlogPostsListComponent,

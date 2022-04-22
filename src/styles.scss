@@ -7,3 +7,12 @@ html, body { height: 100%; }
 }
 
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.grecaptcha-badge {
+  bottom: 100px !important;
+
+}
+
+.grecaptcha-badge:hover {
+  width: 256px !important;
+}

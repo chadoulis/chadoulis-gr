@@ -5,6 +5,8 @@ import { Routes,
 import { BlogPostComponent } from './blog-post/blog-post.component';
 import { BlogPostsOfCategoryComponent } from './blog-posts-of-category/blog-posts-of-category.component';
 import { BlogPostsListComponent } from './blog-posts-list/blog-posts-list.component';
+import { BlogJumbotronComponent } from './blog-jumbotron/blog-jumbotron.component';
+import { BlogOpinionComponent } from './blog-opinion/blog-opinion.component';
 
 
 const routes: Routes = [
@@ -27,13 +29,22 @@ const routes: Routes = [
         },
       },
       {
+        path: 'opinion',
+        component: BlogOpinionComponent
+      },
+      {
+        path: 'opinion/:slug',
+        component: BlogPostComponent
+      },
+      {
         path: ':slug',
         component: BlogPostComponent
       },
       {
         path: 'categories/:category',
         component: BlogPostsOfCategoryComponent
-      }
+      },
+
     ]
   }
 ];

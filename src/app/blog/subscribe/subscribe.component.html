@@ -1,0 +1,16 @@
+<br>
+<section class="col">
+  <!-- <img src="assets/images/rizos2.png" style="width:100%"> -->
+  <div class="card shadow p-5">
+    <h3 class="mb-3" style="text-align: center;">Subscribe to my Newsletter</h3>
+    <!-- <p class="text-justify">Signup for our weekly newsletter to get the latest news, updates and amazing offers deliverd directly in your inbox.</p> -->
+    <form [formGroup]="subscribeForm">
+      <input type="text" id="contactFormEmail" formControlName="contactFormEmail" class="form-control" mdbInputDirective [(ngModel)]="itemEmail" required placeholder="Enter Your Email">
+
+      <button type="submit" class="btn btn-danger btn-block mt-3 rounded-pill" [disabled]="subscribeForm.invalid" (click)="subscribe()" (click)="clearForm()">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+
+
